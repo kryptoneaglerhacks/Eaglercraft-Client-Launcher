@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eaglercraft Clients</title>
+    <link rel="icon" type="image/svg+xml" href="datfa:ajashs">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #f3a847;
+            --primary-dark: #e48f34;
+            --bg-dark: #1a1b2d;
+            --bg-light: #232440;
+            --item-bg: rgba(255, 255, 255, 0.1);
+            --item-hover: rgba(255, 255, 255, 0.2);
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+            background: radial-gradient(circle at top right, var(--bg-light), var(--bg-dark));
+            color: #fff;
+            min-height: 100vh;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #fff;
+            text-shadow: 0 0 25px rgba(243, 168, 71, 0.5);
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            position: relative;
+        }
+
+        .search-container input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            background: var(--item-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .search-container input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 15px rgba(243, 168, 71, 0.2);
+        }
+
+        .category {
+            margin-bottom: 2rem;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+
+        .category.hidden {
+            display: none;
+        }
+
+        .category h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .category-container {
+            display: category-container;
+            category-container-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.2rem;
+        }
+
+        .item {
+            background: var(--item-bg);
+            border-radius: 10px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .item:hover {
+            transform: translateY(-6px);
+            background: var(--item-hover);
+            border-color: var(--primary-dark);
+            box-shadow: 
+                0 4px 25px rgba(0, 0, 0, 0.15),
+                0 0 20px rgba(243, 168, 71, 0.2);
+        }
+
+        .item a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1rem;
+            display: block;
+            padding: 1.2rem 1.7rem;
+            position: relative;
+            z-index: 1;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .item:hover a {
+            color: var(--primary);
+        }
+
+        .version {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            display: block;
+            margin-top: 0.25rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem 1rem;
+            }
+
+            h1 {
+                font-size: 2.1rem;
+            }
+
+            .category-container {
+                category-container-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 2rem;
+            color: rgba(255, 255, 255, 0.7);
+            display: none;
+        }
+    </style>
+</head>
+<body>
+  
+  
+    <div class="container">
+        <header>
+            <h1>Eaglercraft Client Launcher</h1>
+            <div class="search-container">
+                <input type="text" id="search" placeholder="Search Eaglercraft Clients..." autocomplete="off">
+            </div>
+        </header>
+
+        <div id="no-results" class="no-results">
+            No clients found
+        </div>
+        
+        <div class="category">
+            <h2>Dragon Series</h2>
+            <div class="category-container">
+                <div class="item"><a href="DragonX-v5.1.html">DragonX v5.1</a></div>
+                <div class="item"><a href="DragonX-v4.html">DragonX v4</a></div>
+                <div class="item"><a href="DragonX-v2.html">DragonX v2</a></div>
+                <div class="item"><a href="DragonX-v3.html">DragonX v3</a></div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>UwU Series</h2>
+            <div class="category-container">
+                <div class="item"><a href="UwU-Client-beta-v2.html">UwU Client Beta v2</a></div>
+                <div class="item"><a href="UwU-Client-v1.html">UwU Client v1</a></div>
+                <div class="item"><a href="UwU-Lite-v2.html">UwU Lite v2</a></div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>Other Clients</h2>
+            <div class="category-container">
+                <div class="item"><a href="Justin-Client-v3.html">Justin Client v3</a></div>
+                <div class="item"><a href="Shadow-Client-v2.5.html">Shadow Client v2.5</a></div>
+                <div class="item"><a href="WurstX-Client.html">WurstX</a></div>
+                <div class="item"><a href="MoonLight-Client.html">MoonLight Client</a></div>
+                <div class="item"><a href="PiClient.html">PiClient</a></div>
+                <div class="item"><a href="Astra-Client.html">Astra Client</a></div>
+                <div class="item"><a href="Meteor-Client.html">Meteor Client</a></div>
+                <div class="item"><a href="Demon-Client.html">Demon Client</a></div>
+                <div class="item"><a href="Justin-Client-v1.2.4.html">Justin Client v1.2.4</a></div>
+                <div class="item"><a href="Koneclient.html">Koneclient</a></div>
+                <div class="item"><a href="FlameClient-v3.7.html">FlameClient v3.7</a></div>
+                <div class="item"><a href="Daniel-Client-v1.html">Daniel Client v1</a></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const search = document.getElementById('search');
+        const categories = document.querySelectorAll('.category');
+        const items = document.querySelectorAll('.item');
+        const noResults = document.getElementById('no-results');
+
+        function filterClients(searchTerm) {
+            searchTerm = searchTerm.toLowerCase().trim();
+            let hasVisibleitems = false;
+
+            if (searchTerm === '') {
+                items.forEach(item => item.style.display = '');
+                categories.forEach(category => category.style.display = '');
+                noResults.style.display = 'none';
+                return;
+            }
+
+            items.forEach(item => {
+                const itemText = item.textContent.toLowerCase();
+                const isVisible = itemText.includes(searchTerm);
+                item.style.display = isVisible ? '' : 'none';
+                if (isVisible) hasVisibleitems = true;
+            });
+
+            categories.forEach(category => {
+                const hasVisibleitem = Array.from(category.querySelectorAll('.item'))
+                    .some(item => item.style.display !== 'none');
+                category.style.display = hasVisibleitem ? '' : 'none';
+            });
+
+            noResults.style.display = hasVisibleitems ? 'none' : 'block';
+        }
+
+        search.addEventListener('input', (e) => {
+            filterClients(e.target.value);
+        });
+    </script>
+</body>
+</html>
