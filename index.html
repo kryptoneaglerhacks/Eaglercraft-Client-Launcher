@@ -156,6 +156,27 @@
             color: rgba(255, 255, 255, 0.7);
             display: none;
         }
+        
+        .servers-btn {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: #fff;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            font-weight: 600;
+        }
+
+        .servers-btn:hover {
+            background: var(--item-hover);
+            border-color: var(--primary-dark);
+            box-shadow: 
+                0 4px 25px rgba(0, 0, 0, 0.15),
+                0 0 20px rgba(243, 168, 71, 0.2);
+        }
     </style>
 </head>
 <body>
@@ -166,6 +187,7 @@
             <h1>Eaglercraft Client Launcher</h1>
             <div class="search-container">
                 <input type="text" id="search" placeholder="Search Eaglercraft Clients..." autocomplete="off">
+                <button class="servers-btn" id="serversBtn">Servers</button>
             </div>
         </header>
 
@@ -246,6 +268,10 @@
 
         search.addEventListener('input', (e) => {
             filterClients(e.target.value);
+        });
+        
+        document.getElementById('serversBtn').addEventListener('click', function() {
+            window.open('https://cdn.glitch.global/2706e423-8c42-4b04-8798-447e2a21fc00/servers.png?v=1742839236404', '_blank');
         });
     </script>
 </body>
