@@ -59,7 +59,7 @@
             width: 100%;
             padding: 1rem 1.5rem;
             font-size: 1rem;
-            background: var(--item-bg);
+            background: transparent;
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             color: #fff;
@@ -90,13 +90,12 @@
         }
 
         .category-container {
-            display: category-container;
-            category-container-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 1.2rem;
         }
 
         .item {
-            background: var(--item-bg);
             border-radius: 10px;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
