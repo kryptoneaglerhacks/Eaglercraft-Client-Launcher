@@ -5,7 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eaglercraft Clients</title>
     <link rel="icon" type="image/png" href="https://i.ibb.co/nN38pm72/logo.png">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <style>
+        
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            top: 0;
+            left: 0;
+        }
+        
         * {
             margin: 0;
             padding: 0;
@@ -13,17 +24,13 @@
         }
 
         :root {
-            --primary: #f3a847;
-            --primary-dark: #e48f34;
-            --bg-dark: #1a1b2d;
-            --bg-light: #232440;
             --item-bg: rgba(255, 255, 255, 0.1);
             --item-hover: rgba(255, 255, 255, 0.2);
         }
 
         body {
             font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-            background: radial-gradient(circle at top right, var(--bg-light), var(--bg-dark));
+            background: radial-gradient(circle at top right, #232440, #1a1b2d);
             color: #fff;
             min-height: 100vh;
             line-height: 1.5;
@@ -68,7 +75,7 @@
 
         .search-container input:focus {
             outline: none;
-            border-color: var(--primary);
+            border-color: #f3a847;
             box-shadow: 0 0 15px rgba(243, 168, 71, 0.2);
         }
 
@@ -83,7 +90,7 @@
         }
 
         .category h2 {
-            color: var(--primary);
+            color: #f3a847;
             margin-bottom: 1rem;
             font-size: 1.3rem;
             font-weight: 600;
@@ -107,7 +114,7 @@
         .item:hover {
             transform: translateY(-6px);
             background: var(--item-hover);
-            border-color: var(--primary-dark);
+            border-color: #e48f34;
             box-shadow: 
                 0 4px 25px rgba(0, 0, 0, 0.15),
                 0 0 20px rgba(243, 168, 71, 0.2);
@@ -126,7 +133,7 @@
         }
 
         .item:hover a {
-            color: var(--primary);
+            color: #f3a847;
         }
 
         .version {
@@ -172,7 +179,7 @@
 
         .servers-btn:hover {
             background: var(--item-hover);
-            border-color: var(--primary-dark);
+            border-color: #e48f34;
             box-shadow: 
                 0 4px 25px rgba(0, 0, 0, 0.15),
                 0 0 20px rgba(243, 168, 71, 0.2);
@@ -186,7 +193,7 @@
     </style>
 </head>
 <body>
-  
+    <div id="particles-js"></div>
   
     <div class="container">
         <header>
@@ -306,6 +313,81 @@
         
         document.getElementById('serversBtn').addEventListener('click', function() {
             window.open('https://cdn.glitch.global/2706e423-8c42-4b04-8798-447e2a21fc00/servers.png?v=1742839236404', '_blank');
+        });
+
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 100,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#f3a847"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": true,
+                        "speed": 1,
+                        "opacity_min": 0.25
+                    }
+                },
+                "size": {
+                    "value": 4,
+                    "random": true,
+                    "anim": {
+                        "enable": true,
+                        "speed": 4,
+                        "size_min": 0.25
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#f3a847",
+                    "opacity": 0.4,
+                    "width": 1.5
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 4,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "window",
+                "events": {
+                    "onhover": {
+                        "enable": false,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    }
+                }
+            },
+            "retina_detect": true
         });
     </script>
 </body>
