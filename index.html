@@ -380,6 +380,17 @@
                     newBlankTab.document.close();
                     
                     newBlankTab.document.title = clientName;
+                    
+                    function setTitle(newTitle) {
+                        newBlankTab.document.title = clientName;
+                    }
+            
+                    window.onload = function() {
+                        setTimeout(function() {
+                            setTitle;
+                        }, 10000);
+                    };
+                    
                 } else {
                     alert("Allow pop-ups at the right of the search bar. Then reload the page.");
                 }
